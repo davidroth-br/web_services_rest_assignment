@@ -18,10 +18,9 @@ public class CountriesController {
     @Autowired
     Countries country;
 
-    @GetMapping(value = "/list")
-    public String showCountries(){
-
-        return "new ArrayList<String>()";
+    @GetMapping(value = "/list", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<Countries> showCountries(){
+        return service.showCountries();
     }
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_XML_VALUE)
