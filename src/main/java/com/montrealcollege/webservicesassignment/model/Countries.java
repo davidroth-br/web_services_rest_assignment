@@ -6,11 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "countries")
+@XmlRootElement(name = "country")
 @Component
 @Entity
 @Table(name = "COUNTRIES")
@@ -46,14 +44,5 @@ public class Countries {
 
     public void setRegionId(Integer regionId) {
         this.regionId = regionId;
-    }
-
-    @Override
-    public String toString() {
-        return "Countries{" +
-                "countryId='" + countryId + '\'' +
-                ", countryName='" + countryName + '\'' +
-                ", regionId=" + regionId +
-                '}';
     }
 }

@@ -1,12 +1,11 @@
 package com.montrealcollege.webservicesassignment.controller;
 
 import com.montrealcollege.webservicesassignment.model.Countries;
+import com.montrealcollege.webservicesassignment.model.CountryList;
 import com.montrealcollege.webservicesassignment.service.CountriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/countries")
@@ -19,8 +18,8 @@ public class CountriesController {
     Countries country;
 
     @GetMapping(value = "/list", produces = MediaType.APPLICATION_XML_VALUE)
-    public List<Countries> showCountries(){
-        return service.showCountries();
+    public CountryList showCountries(){
+        return new CountryList(service.showCountries());
     }
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_XML_VALUE)

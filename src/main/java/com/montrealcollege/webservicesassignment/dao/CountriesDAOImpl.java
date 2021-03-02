@@ -35,7 +35,7 @@ public class CountriesDAOImpl implements CountriesDAO {
         criteriaQuery.select(root);
 
         Query<Countries> query = session.createQuery(criteriaQuery);
-//        System.out.println(query.list().toString());
+        System.out.println(query.list());
         return query.list();
     }
 }
